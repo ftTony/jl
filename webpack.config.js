@@ -3,12 +3,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
+const PurifyCssPlugin = require('purifycss-webpack')
 module.exports = {
     entry: './js/index.js',
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, './dist'),
-        publicPath: '/'
+        publicPath: '//cdn.xiaowuzi.info/'
     },
     devServer: { //DevServer相关的配置
         compress: true,
@@ -68,6 +71,42 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin(),
+        // new PurifyCssPlugin ({
+        //     paths: glob.sync(path.join(__dirname, '/*.html'))
+        // }),
+        new ParallelUglifyPlugin({
+            sourceMap: true,
+            exclude: /node_modules/,
+            workerCount: 5,
+            // 传递给 uglifyES的参数
+            uglifyES: {
+                output: {
+                    beautify: false,
+                    comments: false
+                },
+                compress: {
+                    warnings: false,
+                    drop_console: true,
+                    collapse_vars: true,
+                    reduce_vars: true
+                }
+            }
+        }),
+        new OptimizeCSSAssetsPlugin ({
+            // 默认是全部的CSS都压缩，该字段可以指定某些要处理的文件
+            assetNameRegExp: /\.(sa|sc|c)ss$/g, 
+            // 指定一个优化css的处理器，默认cssnano
+            cssProcessor: require('cssnano'),
+           
+            cssProcessorPluginOptions: {
+                preset: [
+                    'default', {
+                  discardComments: { removeAll: true}, //对注释的处理
+                  normalizeUnicode: false // 建议false,否则在使用unicode-range的时候会产生乱码
+              }]
+            },
+            canPrint: true  // 是否打印编译过程中的日志
+          }),
         new CopyWebpackPlugin([{
             from: __dirname + "/img",
             to: __dirname + "/dist/img"
