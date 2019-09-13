@@ -1,0 +1,22 @@
+{
+  "name": "jl",
+  "version": "1.0.0",
+  "description": "![image](./img/timg.jpg) <br>",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ftTony/jl.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ftTony/jl/issues"
+  },
+  "homepage": "https://github.com/ftTony/jl#readme",
+  "devDependencies": {
+    "webpack": "^4.40.1"
+  }
+}
