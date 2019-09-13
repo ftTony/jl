@@ -16,6 +16,12 @@ body {
     height: 100%;
     overflow: hidden;
     background: #ffffff;
+    z-index: 2;
+    transition: z-index 0s linear .5s;
+}
+
+body:hover .door {
+    z-index: 0;
 }
 
 .door-left,
@@ -25,8 +31,6 @@ body {
     left: 0px;
     width: 100%;
     height: 160%;
-    /* width: 100%;
-    height: 100%; */
     background: #000000;
     box-sizing: border-box;
     transition: all .5s ease;
@@ -166,7 +170,38 @@ body.open #contact {
 }
 
 .swiper-container {
-    position: absolute;
+    position: absolute !important;
     top: 0px;
     left: 0px;
+    opacity: 0;
+    transition: opacity 0.1s ease .5s
+}
+
+body:hover .swiper-container {
+    opacity: 1;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
 }

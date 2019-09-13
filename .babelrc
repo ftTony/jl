@@ -1,4 +1,8 @@
 {
     "plugins": [],
-    "presets": []
+    "presets": [
+        ["env", {
+            "modules": false
+        }],
+    ]
 }

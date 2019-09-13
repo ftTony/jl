@@ -1,10 +1,9 @@
 var webpack = require("webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
     entry: './js/index.js',
     devServer: { //DevServer相关的配置
-        contentBase: path.join(__dirname, 'dist'),
         compress: true,
         port: 8888,
         inline: true,
@@ -17,14 +16,29 @@ module.exports = {
         rules: [{
             test: /\.css$/,
             use: [{
-                loader: 'css-loader?minimize',
+                loader: MiniCssExtractPlugin.loader,
+            }, {
+                loader: 'css-loader',
+            }, {
+                loader: 'postcss-loader',
+                options: {
+                    ident: 'postcss',
+                    plugins: [
+                        // require('autoprefixer')(),
+                        require('postcss-cssnext')(),
+                        require('cssnano')(),
+                        require('postcss-sprites')()
+                    ]
+                }
             }]
         }, {
             test: /\.js$/,
+            exclude: /(node_modules)/,
             loader: 'babel-loader'
         }]
     },
     plugins: [
+        new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './index.html'
