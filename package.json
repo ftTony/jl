@@ -4,7 +4,7 @@
   "description": "![image](./img/timg.jpg) <br>",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": ""
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,13 @@
   },
   "homepage": "https://github.com/ftTony/jl#readme",
   "devDependencies": {
-    "webpack": "^4.40.1"
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.40.1",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "swiper": "^4.5.0"
   }
 }

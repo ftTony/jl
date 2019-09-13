@@ -1,13 +1,54 @@
-#cover {
-    position: absolute;
-    top: 0;
-    z-index: 100;
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
+html,
 body {
-    margin: 0;
-    background-color: #FFF;
-    font-family: 'Ubuntu', sans-serif;
+    height: 100%;
+    overflow: hidden;
+}
+
+.door {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.door-left,
+.door-right {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 160%;
+    /* width: 100%;
+    height: 100%; */
+    background: #000000;
+    box-sizing: border-box;
+    transition: all .5s ease;
+}
+
+.door-left {
+    -webkit-transform-origin: 0 0;
+    transform: rotate(-45deg) translateX(-39%) translateY(0%);
+}
+
+.door:hover .door-left {
+    transform: rotate(-45deg) translateX(-39%) translateY(-110%);
+}
+
+.door-right {
+    left: 50%;
+    transform: rotate(-45deg) translateX(-30%) translateY(-80%);
+    -webkit-transform-origin: 100% 0;
+}
+
+.door:hover .door-right {
+    transform: rotate(-45deg) translateX(20%) translateY(50%);
 }
 
 b {
@@ -99,18 +140,18 @@ nav ul a:hover span {
     display: inline-block;
 }
 
+#cover {
+    position: absolute;
+    top: 0;
+    z-index: 100;
+}
+
 body>section {
     width: 100%;
     height: 700px;
     overflow: hidden;
 }
 
-body #skill,
-body #about,
-body #works,
-body #contact {
-    display: none;
-}
 
 #skill,
 #works {
@@ -122,4 +163,10 @@ body.open #about,
 body.open #works,
 body.open #contact {
     display: block;
+}
+
+.swiper-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
