@@ -17,6 +17,7 @@ body {
     overflow: hidden;
     background: #ffffff;
     z-index: 2;
+    display: none;
     transition: z-index 0s linear .5s;
 }
 
@@ -236,4 +237,12 @@ body.open #contact {
     width: 300px;
     height: 300px;
 
+}
+
+.profile table {
+    margin-top: 20px;
+}
+
+.profile table td {
+    padding: 15px;
 }
