@@ -125,6 +125,7 @@ body:hover .door {
 
 .profile-list {
     position: relative;
+    border-radius: 50%;
 }
 
 .profile-list li {
@@ -137,9 +138,47 @@ body:hover .door {
     position: absolute;
     text-align: center;
     color: #fff;
-    background-color: #007aff;
     border-radius: 50%;
     cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+.profile-list li:first-child {
+    -webkit-animation: outX 8s cubic-bezier(.36, 0, .64, 1) -4s infinite alternate, outY 8s cubic-bezier(.36, 0, .64, 1) 0s infinite alternate;
+    animation: outX 8s cubic-bezier(.36, 0, .64, 1) -4s infinite alternate, outY 8s cubic-bezier(.36, 0, .64, 1) 0s infinite alternate;
+    background-color: rgba(193, 131, 106, 0.8);
+}
+
+.profile-list li:nth-child(2) {
+    background-color: rgba(121, 100, 102, 0.8);
+}
+
+.profile-list li:nth-child(3) {
+    background-color: rgba(49, 65, 82, 0.8);
+}
+
+.profile-list li:nth-child(4) {
+    background-color: rgba(66, 66, 66, 0.8);
+}
+
+@keyframes outX {
+    0% {
+        left: -1.5625rem
+    }
+
+    to {
+        left: 14.0625rem
+    }
+}
+
+keyframes outY {
+    0% {
+        top: -1.5625rem
+    }
+
+    to {
+        top: 14.0625rem
+    }
 }
 
 .profile-list li:first-child {
@@ -223,19 +262,20 @@ body:hover .door {
 }
 
 .jy-list .jy-item {
+    box-shadow: 0 0 0.78125rem rgba(0, 0, 0, .5);
+    border-radius: 12px;
     width: 250px;
     height: 250px;
-    border: 1px solid #ccc;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0 15px;
-    border: 1px solid #ccc;
     align-items: center;
     padding: 20px;
     background: #041f3a;
     cursor: pointer;
     overflow: hidden;
+    position: relative;
 }
 
 .jy-list .jy-desc {
@@ -244,11 +284,19 @@ body:hover .door {
     transition: transform .5s linear;
     text-align: left;
     line-height: 30px;
+    background: rgba(0, 0, 0, .4);
+    height: 250px;
+    width: 250px;
+    padding: 20px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 18px;
 }
 
 .jy-item:hover .jy-desc {
     transform: translateY(0px);
-    transform: translateY(-80px);
 }
 
 .jy-list .jy-item img {
@@ -256,26 +304,18 @@ body:hover .door {
     height: 100px;
 }
 
-.jy-list .jy-item:first-child img {
-    margin-top: 69px;
-}
-
 .jy-list .jy-item:first-child .jy-time {
     margin-top: -18px;
 }
 
-.jy-list .jy-item:nth-child(2) img {
-    margin-top: 116px;
-}
-
 .jy-list .jy-item:nth-child(2) .jy-time {
-    margin-top: 5px;
+    margin-top: -15px;
 }
 
 .jy-list .jy-item:nth-child(3) img {
-    margin-top: 34px;
+    margin-top: -3px;
 }
 
 .jy-list .jy-item:nth-child(3) .jy-time {
-    margin-top: -20px;
+    margin-top: -9px;
 }
