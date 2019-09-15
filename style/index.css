@@ -139,6 +139,7 @@ body:hover .door {
     color: #fff;
     background-color: #007aff;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .profile-list li:first-child {
@@ -179,7 +180,7 @@ body:hover .door {
     padding: 5px 50px;
     margin: 20px 0px;
     color: #fff;
-    margin-top: 120px;
+    margin-top: 140px;
     margin-bottom: 50px;
 }
 
@@ -218,7 +219,7 @@ body:hover .door {
 
 .jy-list {
     display: flex;
-    margin-top: 150px;
+    margin-top: 70px;
 }
 
 .jy-list .jy-item {
@@ -232,9 +233,49 @@ body:hover .door {
     border: 1px solid #ccc;
     align-items: center;
     padding: 20px;
+    background: #041f3a;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.jy-list .jy-desc {
+    transform: translateY(300px);
+    font-size: 16px;
+    transition: transform .5s linear;
+    text-align: left;
+    line-height: 30px;
+}
+
+.jy-item:hover .jy-desc {
+    transform: translateY(0px);
+    transform: translateY(-80px);
 }
 
 .jy-list .jy-item img {
     width: 200px;
     height: 100px;
+}
+
+.jy-list .jy-item:first-child img {
+    margin-top: 69px;
+}
+
+.jy-list .jy-item:first-child .jy-time {
+    margin-top: -18px;
+}
+
+.jy-list .jy-item:nth-child(2) img {
+    margin-top: 116px;
+}
+
+.jy-list .jy-item:nth-child(2) .jy-time {
+    margin-top: 5px;
+}
+
+.jy-list .jy-item:nth-child(3) img {
+    margin-top: 34px;
+}
+
+.jy-list .jy-item:nth-child(3) .jy-time {
+    margin-top: -20px;
 }
