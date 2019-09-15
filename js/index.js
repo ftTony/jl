@@ -11,12 +11,12 @@ var style_list = [
     'icon-lianxifangshi'
 ];
 
-new Swiper('.swiper-container', {
+new Swiper('.swiper-container-h', {
     direction: 'vertical',
     slidesPerView: 1,
     mousewheel: true,
     pagination: {
-        el: '.swiper-pagination',
+        el: '.swiper-pagination-h',
         clickable: true,
         renderBullet: function (index, className) {
             var text = '';
@@ -42,19 +42,14 @@ new Swiper('.swiper-container', {
     }
 });
 
-// new Swiper('#work', {
-//     effect: 'coverflow',
-//     grabCursor: true,
-//     centeredSlides: true,
-//     slidesPerView: 'auto',
-//     coverflowEffect: {
-//         rotate: 50,
-//         stretch: 0,
-//         depth: 100,
-//         modifier: 1,
-//         slideShadows: true,
-//     },
-//     pagination: {
-//         el: '.swiper-pagination',
-//     },
-// });
+var swiperV = new Swiper('.swiper-container-v', {
+    direction: 'horizontal',
+    spaceBetween: 50,
+    slidesPerView: 3,
+    loop: true,
+    centeredSlides: true,
+    pagination: {
+        el: '.swiper-pagination-v',
+        clickable: true,
+    },
+});

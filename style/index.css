@@ -71,7 +71,6 @@ body:hover .door {
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -353,4 +352,41 @@ body:hover .door {
 
 .jy-list .jy-item:nth-child(3) .jy-time {
     margin-top: -9px;
+}
+
+.swiper-pagination-v .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #000;
+    opacity: .2;
+    margin: 6px 0;
+    padding: 0px;
+}
+
+.swiper-pagination-v .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #007aff;
+}
+
+.swiper-container-v {
+    position: initial !important;
+    width: 1200px;
+    height: 400px;
+    border-radius: 20px;
+    margin: 20px auto;
+}
+
+.swiper-container-v .swiper-slide {
+    background-color: #fff;
+    color: #000;
+    transition: 300ms;
+    transform: scale(0.8);
+    cursor: pointer;
+}
+
+.swiper-container-v .swiper-slide-active,
+.swiper-container-v .swiper-slide-duplicate-active {
+    transform: scale(1);
 }
