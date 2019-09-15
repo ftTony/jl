@@ -11,6 +11,31 @@ body {
     color: #ffffff;
 }
 
+.icon-yinle {
+    position: absolute;
+    z-index: 2;
+    font-size: 35px !important;
+    top: 35px;
+    right: 25px;
+    transition: transform 3s linear;
+    animation: yinyue 3s linear 0s infinite;
+
+}
+
+@keyframes yinyue {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .door {
     position: relative;
     width: 100%;
@@ -257,11 +282,6 @@ body:hover .door {
     margin-bottom: 50px;
 }
 
-.contact-list li {
-    float: left;
-    margin: 5px;
-}
-
 .swiper-pagination-bullet {
     opacity: none;
 }
@@ -389,4 +409,37 @@ body:hover .door {
 .swiper-container-v .swiper-slide-active,
 .swiper-container-v .swiper-slide-duplicate-active {
     transform: scale(1);
+}
+
+.contact-list {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-list li {
+    margin: 0 10px;
+}
+
+.contact-list a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.contact-list a i {
+    font-size: 55px;
+}
+
+.contact-box p {
+    line-height: 55px;
+}
+
+.contact-box img {
+    width: 250px;
+    height: 250px;
+}
+
+#copyright {
+    font-size: 14px;
+    margin-top: 20px;
 }
