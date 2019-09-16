@@ -142,7 +142,34 @@ body:hover .door {
     top: 0px;
 }
 
-
+.skill h2{
+    margin-bottom: 100px;
+}
+.skill p{   
+    opacity:0;
+    transition:all 1.5s;
+    line-height: 33px;
+}
+.skill p:nth-child(2){
+    transform:translateY(-1000px);
+    transition-delay: 0s;
+}
+.skill p:nth-child(3){
+    transform:translateX(-1000px);
+    transition-delay: 1.5s;
+}
+.skill p:nth-child(4){
+    transform:translateX(1000px);
+    transition-delay: 3s;
+}
+.skill p:nth-child(5){
+    transform:translateY(1000px);
+    transition-delay: 4.5s;
+}
+.ani-slide .skill p{
+    transform:translateX(0);
+    opacity:1;
+}
 .profile {
     position: relative;
 }

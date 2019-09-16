@@ -39,12 +39,25 @@ new Swiper('.swiper-container-h', {
             }
             return '<div class="' + className + '"><i class=" icon iconfont ' + style_list[index] + '"></i><span class="msg">' + text + '</span></div>';
         }
+    },
+    on: {
+        init: function () {
+
+        },
+        transitionStart: function () {
+            for (var i = 0; i < this.slides.length; i++) {
+                this.slides.eq(i).removeClass('ani-slide');
+            }
+        },
+        transitionEnd: function () {
+            if (this.activeIndex === 1) this.slides.eq(this.activeIndex).addClass('ani-slide');
+        }
     }
 });
 
-var swiperV = new Swiper('.swiper-container-v', {
+new Swiper('.swiper-container-v', {
     direction: 'horizontal',
-    spaceBetween: 50,
+    spaceBetween: 30,
     slidesPerView: 3,
     loop: true,
     centeredSlides: true,

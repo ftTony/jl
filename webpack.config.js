@@ -33,8 +33,7 @@ module.exports = {
                     plugins: [
                         // require('autoprefixer')(),
                         require('postcss-cssnext')(),
-                        require('cssnano')(),
-                        require('postcss-sprites')()
+                        require('cssnano')()
                     ]
                 }
             }]
@@ -43,18 +42,11 @@ module.exports = {
             exclude: /(node_modules)/,
             loader: 'babel-loader'
         }, {
-            test: /\.(woff|svg|eot|ttf)\??.*$/,
-            loader: 'url-loader?name=fonts/[name].[md5:hash:hex:7].[ext]'
-        }, {
-            test: /\.jpg|\.png|\.jpeg$/,
-            use: [{
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[ext]',
-                    outputPath: './img',
-                    publicPath: '/img'
-                }
-            }]
+            test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/i,
+            loader: [
+                'url-loader?limit=8192&name=img/[name]-[hash:5].[ext]',
+                'image-webpack-loader'
+            ]
         }]
     },
     plugins: [
