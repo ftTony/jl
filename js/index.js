@@ -47,10 +47,13 @@ new Swiper('.swiper-container-h', {
         transitionStart: function () {
             for (var i = 0; i < this.slides.length; i++) {
                 this.slides.eq(i).removeClass('ani-slide');
+                this.slides.eq(i).removeClass('jy-slide');
             }
         },
         transitionEnd: function () {
             if (this.activeIndex === 1) this.slides.eq(this.activeIndex).addClass('ani-slide');
+            if (this.activeIndex === 2) this.slides.eq(this.activeIndex).addClass("jy-slide");
+
         }
     }
 });
