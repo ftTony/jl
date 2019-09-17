@@ -151,19 +151,19 @@ body:hover .door {
     line-height: 33px;
 }
 .skill p:nth-child(2){
-    transform:translateY(-1000px);
+    transform:translateY(-1000px) rotate(1080deg);
     transition-delay: 0s;
 }
 .skill p:nth-child(3){
-    transform:translateX(-1000px);
+    transform:translateX(-1000px) rotate(1080deg);
     transition-delay: 1.5s;
 }
 .skill p:nth-child(4){
-    transform:translateX(1000px);
+    transform:translateX(1000px) rotate(1080deg);
     transition-delay: 3s;
 }
 .skill p:nth-child(5){
-    transform:translateY(1000px);
+    transform:translateY(1000px) rotate(1080deg);
     transition-delay: 4.5s;
 }
 .ani-slide .skill p{

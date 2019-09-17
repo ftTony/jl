@@ -44,8 +44,7 @@ module.exports = {
         }, {
             test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/i,
             loader: [
-                'url-loader?limit=8192&name=img/[name]-[hash:5].[ext]',
-                'image-webpack-loader'
+                'url-loader?limit=8192&name=img/[name]-[hash:5].[ext]'
             ]
         }]
     },
