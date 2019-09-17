@@ -157,7 +157,6 @@ body:hover .door {
     transition: all 1.5s;
     line-height: 33px;
 }
-<<<<<<< HEAD
 .skill p:nth-child(2){
     transform:translateY(-1000px) rotate(1080deg);
     transition-delay: 0s;
