@@ -64,8 +64,18 @@ new Swiper('.swiper-container-v', {
     slidesPerView: 3,
     loop: true,
     centeredSlides: true,
+    on: {
+        touchStart: function (e) {
+            e.preventDefault();
+            console.log(e);
+        }
+    },
     pagination: {
         el: '.swiper-pagination-v',
         clickable: true,
     },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    }
 });
