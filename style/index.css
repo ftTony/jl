@@ -215,9 +215,10 @@ body:hover .door {
 }
 
 .profile-list {
+    position: absolute;
     border-radius: 50%;
-    top: -2px;
-    left: 241px;
+    top: 0;
+    left: 2.15rem;
 }
 
 .profile-list li {
@@ -225,7 +226,7 @@ body:hover .door {
     height: 40px;
     line-height: 40px;
     font-size: 16px;
-    padding: 8px;
+    padding: 8;
     border-radius: 50%;
     position: absolute;
     text-align: center;
@@ -285,26 +286,22 @@ body:hover .door {
 
 @keyframes outX {
     0% {
-        left: -1.5625rem
+        left: 0px;
     }
 
     to {
-        left: 14.0625rem
+        left: 2.5rem;
     }
 }
 
 @keyframes outY {
     0% {
-        top: -1.5625rem
+        top: 2.3rem;
     }
 
     to {
-        top: 14.0625rem
+        top: -0.2rem;
     }
-}
-
-.profile-list {
-    position: absolute;
 }
 
 .profile-list li:first-child {
@@ -329,8 +326,8 @@ body:hover .door {
 
 .profile-img {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 1.5rem;
+    height: 1.5rem;
     transition: all .5s ease;
     cursor: pointer;
     margin-top: 50px;
@@ -346,6 +343,7 @@ body:hover .door {
     margin: 20px 0px;
     color: #fff;
     margin-top: 140px;
+    text-align: left;
     margin-bottom: 50px;
 }
 
@@ -518,4 +516,38 @@ body:hover .door {
 #copyright {
     font-size: 14px;
     margin-top: 20px;
+}
+
+@media screen and (max-width: 640px) {
+    body {
+        font-size: 12px;
+    }
+
+    .profile-list li {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+        line-height: 35px;
+    }
+
+    @keyframes outX {
+        0% {
+            left: 0;
+        }
+
+        to {
+            left: 2.5rem;
+        }
+    }
+
+    @keyframes outY {
+        0% {
+            top: 2.6rem;
+        }
+
+        to {
+            top: 0.1rem;
+        }
+    }
+
 }
