@@ -478,6 +478,7 @@ body:hover .door {
     transition: 300ms;
     transform: scale(0.8);
     cursor: pointer;
+    flex-direction: column;
 }
 
 .swiper-container-v .swiper-slide-active,
@@ -520,7 +521,7 @@ body:hover .door {
     bottom: 15px;
 }
 
-#copyright p{
+#copyright p {
     line-height: 25px;
 }
 
