@@ -10,8 +10,7 @@ module.exports = {
     entry: './js/index.js',
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, './dist'),
-        publicPath: '//cdn.xiaowuzi.info/'
+        path: path.resolve(__dirname, './dist')
     },
     devServer: { //DevServer相关的配置
         compress: true,
